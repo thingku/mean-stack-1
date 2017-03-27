@@ -1,0 +1,48 @@
+<form>
+	<fieldset>
+		<h3>Edit User </h3>
+	</fieldset>	
+	<fieldset>
+		<label>Firstname: </label>
+		<input type="text" ng-model="userInput.firstname" />
+	</fieldset>	
+	<fieldset>
+		<label>Middlename: </label>
+		<input type="text" ng-model="userInput.middlename"/>
+	</fieldset>	
+	<fieldset>
+		<label>Lastname: </label>
+		<input type="text" ng-model="userInput.lastname"/>
+	</fieldset>
+	<fieldset>
+		<label>Occupation: </label>
+		<input type="text" ng-model="userInput.occupation"/>
+	</fieldset>				
+	<fieldset>
+		<label>Summary: </label>
+		<textarea ng-model="userInput.summary"></textarea>
+	</fieldset>
+	<fieldset>
+		<label>Email address: </label>
+		<input type="text" ng-model="userInput.email"/>
+	</fieldset>	
+	<fieldset>
+		<label>Hobbies: </label>
+		<ul>
+			<li ng-repeat=" hobby in hobbies ">
+				<input type="checkbox" value="{{ hobby.name }}" ng-checked="{{ hobby.checked }}" is-checked /> <span>{{ hobby.name }}</span>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<label>Status: </label>
+		<select ng-model="userInput.status">
+			<option value="NA">Please select: </option>
+			<option ng-repeat="option in statuses" ng-value="option.value">{{option.label}}</option>
+		</select>
+	</fieldset>			
+	<fieldset>
+		<button class="btn btn-primary" ng-click="addUserInfo()" prevent-default>Save Changes</button>
+		<a ui-sref="users" class="btn btn-danger" >Cancel</a>
+	</fieldset>			
+</form>

@@ -1,0 +1,31 @@
+				<h2>Users</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat=" user in users ">
+							<td>
+								{{ user.firstname }} {{ user.middlename | limitTo: 1 }}. {{ user.lastname }}
+							</td>
+							<td class="actionBtns">
+								<a ui-sref="users.user( { id : user._id } )">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</a>
+								<a ui-sref="users.edit( { id : user._id } )">
+									<i class="fa fa-pencil" aria-hidden="true"></i>
+								</a>
+								<a ui-sref="settings( { id: user._id } )">
+									<i class="fa fa-gear" aria-hidden="true"></i>
+								</a>																
+							</td>						
+						</tr>
+					</tbody>
+				</table>	
+				<article>
+					<div ui-view="userview"></div>
+					<div ui-view="editview"></div>
+				</article>	

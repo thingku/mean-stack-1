@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="usersApp">
+<head>
+	<title>User List Application using MEAN.JS</title>
+	<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body ng-controller="index">
+	<main class="mainContainer">
+		<header>
+			<i class="fa fa-star" aria-hidden="true"></i> Sample Logo
+		</header>
+		<aside class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			<ul>
+				<li>
+					<a ui-sref="index">
+						Dashboard <span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+					</a>
+				</li>			
+				<li>
+					<a ui-sref="users">
+						View List <span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+					</a>
+				</li>
+				<li>
+					<a ui-sref="add">
+						Add User <span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+					</a>
+				</li>				
+			</ul>
+		</aside>
+		<section  class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+			<div class="sectionContentHolder">
+				<ui-view></ui-view>
+			</div>
+		</section>
+	</main>
+</body>
+<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-md5/angular-md5.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controller/controller.js"></script>
+<script type="text/javascript" src="js/service/service.js"></script>
+<script type="text/javascript" src="js/directive/directive.js"></script>
+</html>

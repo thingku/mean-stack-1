@@ -1,0 +1,21 @@
+<form>
+	<fieldset>
+		<h3>User Settings</h3>
+	</fieldset>	
+	<fieldset>
+		<h4>{{ userData.firstname }} {{ userData.middlename | limitTo: 1 }}. {{ userData.lastname }}</h4>
+	</fieldset>	
+	<fieldset>
+		<label>Username: </label>
+		<input type="text" ng-model="userInput.username" required/>
+	</fieldset>
+	<fieldset>
+		<button class="btn btn-primary" ng-click="updateUsername()" prevent-default>Update Username</button>
+		<a ui-sref="users" class="btn btn-danger" >Cancel</a>
+	</fieldset>			
+</form>
+<form>
+	<fieldset>
+		<a ui-sref="changepassword({ id : userData._id })">Change Password</a>
+	</fieldset>
+</form>
